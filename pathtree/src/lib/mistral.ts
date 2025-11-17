@@ -1,8 +1,18 @@
 import { Mistral } from '@mistralai/mistralai';
 
-const client = new Mistral({
-  apiKey: process.env.MISTRAL_API_KEY || 'GtJJSeLN4KB2ZSHRiFW4mPwjeIIOUfG2',
-});
+// Function to get API key from environment
+function getApiKey(): string {
+  return process.env.MISTRAL_API_KEY || 'GtJJSeLN4KB2ZSHRiFW4mPwjeIIOUfG2';
+}
+
+// Function to create Mistral client with custom API key
+function createMistralClient(customApiKey?: string): Mistral {
+  return new Mistral({
+    apiKey: customApiKey || getApiKey(),
+  });
+}
+
+const client = createMistralClient();
 
 export interface Node {
   id: string;

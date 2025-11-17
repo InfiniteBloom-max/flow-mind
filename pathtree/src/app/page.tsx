@@ -7,6 +7,7 @@ import KnowledgeTree from '@/components/KnowledgeTree';
 import Summaries from '@/components/Summaries';
 import Flashcards from '@/components/Flashcards';
 import Tutor from '@/components/Tutor';
+import Settings from '@/components/Settings';
 
 interface UploadedFile {
   file_id: string;
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <Settings />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
